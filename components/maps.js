@@ -12,12 +12,7 @@ var iconoBase = Icon.extend({
   },
 });
 
-const Maps = ({
-  center = [19.42163, -99.137513],
-  zoom = 10,
-  data,
-}) => {
-
+const Maps = ({ center = [19.42163, -99.137513], zoom = 10, data }) => {
   return (
     <div className="drop-shadow-2xl border-2 border-sky-500">
       <MapContainer
@@ -40,17 +35,13 @@ const Maps = ({
             icon={new iconoBase({ iconUrl: "/gps.svg" })}
           >
             <Popup>
-                <h2 className="text-blue-600 mt-2">
-                    ID dispositivo: GPS-TEST
-                </h2>
+              <h2 className="text-blue-600 mt-2">
+                UUID: 7E48A7A8-AB3C-484C-8EBA-027FB8F84F44
+              </h2>
+              <p className="mb-1 mt-1">Nombre: GPS-TEST</p>
+              <p className="mb-1 mt-1">Latitud: {marker.latitude}</p>
 
-                <p className="mb-1 mt-1">
-                    Latitud: {marker.latitude}
-                </p>
-
-                <p className="mb-1 mt-1">
-                    Longitud: {marker.longitude}
-                </p>
+              <p className="mb-1 mt-1">Longitud: {marker.longitude}</p>
             </Popup>
           </Marker>
         ))}
